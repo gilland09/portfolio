@@ -1,3 +1,4 @@
+/* Motion and interaction states use BEM component hooks; design tokens and custom properties keep effects reusable without duplicated values. */
 :root {
   --accent-primary: var(--color-accent);
 }

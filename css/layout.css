@@ -1,3 +1,4 @@
+/* Macro page layout and responsive primitives; BEM hooks identify regions, tokens avoid repeated values, Grid composes 2D layouts, and Flexbox aligns 1D groups. */
 .container {
   width: min(calc(100% - 3rem), var(--container-width));
   margin-inline: auto;

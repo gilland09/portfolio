@@ -1,3 +1,4 @@
+/* Shared reset, typography, focus, and motion defaults; custom properties centralize values consumed by BEM component and layout layers. */
 *,
 *::before,
 *::after {

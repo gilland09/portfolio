@@ -1,3 +1,4 @@
+/* Design tokens define shared theme, type, spacing, and motion values once; BEM component variants consume these custom properties instead of duplicating values. */
 :root {
   color-scheme: dark;
 

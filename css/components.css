@@ -1,3 +1,4 @@
+/* Reusable UI components; BEM modifiers (for example .btn--primary) specialize base classes and shared custom properties avoid duplicated design values. */
 .site-header {
   --surface-glass: color-mix(in srgb, var(--color-surface) 82%, transparent);
 

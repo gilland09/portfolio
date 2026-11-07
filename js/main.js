@@ -1,3 +1,4 @@
+/* Progressive enhancement updates BEM UI states and CSS custom properties for theme, navigation, filtering, reveals, dialog, and static contact workflows. */
 const root = document.documentElement;
 const body = document.body;
 const themeToggle = document.querySelector(".theme-toggle");
