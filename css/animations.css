@@ -1,1 +1,152 @@
-/* Phase 3 animation layer placeholder; reduced-motion behavior is established in base.css. */
+:root {
+  --accent-primary: var(--color-accent);
+}
+
+[data-reveal-enabled="true"] .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--stagger-delay, 0ms);
+}
+
+[data-reveal-enabled="true"] .reveal--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card,
+.project-card {
+  transition:
+    transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.3s ease;
+}
+
+.card:hover,
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-primary);
+}
+
+.project-card {
+  isolation: isolate;
+}
+
+.project-card::before {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    280px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    color-mix(in srgb, var(--accent-primary) 16%, transparent),
+    transparent 74%
+  );
+  content: "";
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.project-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.nav-list a.is-active {
+  color: var(--color-accent-strong);
+}
+
+.nav-list a[aria-current="location"] {
+  text-decoration: underline;
+  text-decoration-color: var(--color-accent-strong);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.45rem;
+}
+
+.form-field input[aria-invalid="true"],
+.form-field textarea[aria-invalid="true"] {
+  border-color: #ef4444;
+}
+
+.form-error {
+  min-height: 0;
+  margin: 0;
+  color: #b91c1c;
+  font-size: var(--text-xs);
+}
+
+[data-theme="dark"] .form-error {
+  color: #fca5a5;
+}
+
+.contact-form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+}
+
+.contact-form-actions[hidden] {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .project-card:hover::before {
+    opacity: 1;
+  }
+}
+
+@supports (view-transition-name: none) {
+  ::view-transition-group(*) {
+    animation-duration: 360ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 240ms;
+  }
+}
+
+@media (max-width: 767px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+
+  .contact-form-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .contact-form-actions .button {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal-enabled="true"] .reveal,
+  [data-reveal-enabled="true"] .reveal--visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .card:hover,
+  .project-card:hover,
+  .btn:hover,
+  .button:hover {
+    transform: none;
+  }
+
+  .project-card::before {
+    display: none;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+}
