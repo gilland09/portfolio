@@ -13,6 +13,11 @@ const filterStatus = document.querySelector(".filter-status");
 const dialog = document.querySelector("#case-study-modal");
 const modalTrigger = document.querySelector(".modal-trigger");
 const modalClose = document.querySelector(".modal-close");
+const figmaDialog = document.querySelector("#figma-preview-modal");
+const figmaTrigger = document.querySelector(".figma-preview-trigger");
+const figmaClose = document.querySelector(".figma-preview-close");
+const figmaFrame = figmaDialog.querySelector("iframe");
+const figmaLaunchLink = document.querySelector(".project-design .project-launch");
 const contactForm = document.querySelector(".contact-form");
 const formStatus = document.querySelector(".form-status");
 const contactFields = [...document.querySelectorAll(".form-field input, .form-field textarea")];
@@ -20,11 +25,23 @@ const contactActions = document.querySelector(".contact-form-actions");
 const mailClientLink = document.querySelector(".mail-client-link");
 const copyEmailButton = document.querySelector(".copy-email");
 const currentYear = document.querySelector("#current-year");
+const certificateCarousel = document.querySelector(".cert-carousel");
+const certificateTrack = document.querySelector(".cert-carousel-track");
+const certificateSlides = [...document.querySelectorAll(".cert-slide")];
+const certificateDots = [...document.querySelectorAll(".cert-dot")];
+const certificateLightbox = document.querySelector("#cert-lightbox");
+const lightboxImage = certificateLightbox.querySelector(".lightbox-image");
+const lightboxTitle = certificateLightbox.querySelector("#lightbox-title");
+const lightboxIssuer = certificateLightbox.querySelector(".lightbox-issuer");
+const lightboxDescription = certificateLightbox.querySelector(".lightbox-description");
+const lightboxCounter = certificateLightbox.querySelector(".lightbox-counter");
+const lightboxClose = certificateLightbox.querySelector(".lightbox-close");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const mobileViewport = window.matchMedia("(max-width: 767px)");
 const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 const emailAddress = "gillandsabile09@gmail.com";
 const themeStorageKey = "gilland-portfolio-theme";
+let certificateIndex = 0;
 const revealedElements = [...document.querySelectorAll("main section"), ...projectCards];
 const scrollSpySections = navLinks
   .map((link) => document.querySelector(link.getAttribute("href")))
@@ -265,17 +282,185 @@ modalClose.addEventListener("click", () => {
   dialog.close();
 });
 
-dialog.addEventListener("click", (event) => {
-  if (event.target === dialog) {
-    dialog.close();
+figmaTrigger.addEventListener("click", () => {
+  const embedUrl = new URL("https://www.figma.com/embed");
+  embedUrl.searchParams.set("embed_host", "share");
+  embedUrl.searchParams.set("url", figmaLaunchLink.href);
+  figmaFrame.src = embedUrl.href;
+  figmaDialog.showModal();
+});
+
+figmaClose.addEventListener("click", () => {
+  figmaDialog.close();
+});
+
+function getCertificateDetails(index) {
+  const slide = certificateSlides[index];
+  const image = slide.querySelector("img");
+  const title = slide.querySelector("h3").textContent.trim();
+  const issuer = slide.querySelector(".cert-issuer").textContent.trim();
+  const dateLabels = [...slide.querySelectorAll(".certificate-meta span")];
+  const date = dateLabels[dateLabels.length - 1].textContent.trim();
+  const description = [...slide.querySelectorAll(".cert-slide-copy > p")]
+    .filter((paragraph) => !paragraph.matches(".certificate-meta, .cert-issuer, .credential-id"))
+    .map((paragraph) => paragraph.textContent.trim())
+    .join(" ");
+
+  return {
+    image: image.getAttribute("src"),
+    alt: image.alt,
+    title,
+    issuer,
+    date,
+    description,
+  };
+}
+
+function updateCertificateLightbox() {
+  const certificate = getCertificateDetails(certificateIndex);
+  lightboxImage.src = certificate.image;
+  lightboxImage.alt = certificate.alt;
+  lightboxTitle.textContent = certificate.title;
+  lightboxIssuer.textContent = `${certificate.issuer} · ${certificate.date}`;
+  lightboxDescription.textContent = certificate.description;
+  lightboxCounter.textContent = `${certificateIndex + 1} of ${certificateSlides.length}`;
+}
+
+function setCertificateSlide(nextIndex) {
+  certificateIndex = (nextIndex + certificateSlides.length) % certificateSlides.length;
+  certificateTrack.style.setProperty("--active-index", certificateIndex);
+
+  certificateSlides.forEach((slide, index) => {
+    const isActive = index === certificateIndex;
+    slide.classList.toggle("is-active", isActive);
+    slide.setAttribute("aria-hidden", String(!isActive));
+    slide.inert = !isActive;
+  });
+
+  certificateDots.forEach((dot, index) => {
+    const isActive = index === certificateIndex;
+    dot.classList.toggle("is-active", isActive);
+    dot.setAttribute("aria-current", String(isActive));
+  });
+
+  document.querySelector(".cert-slide-status").textContent =
+    `Certificate ${certificateIndex + 1} of ${certificateSlides.length}`;
+
+  if (certificateLightbox.open) {
+    updateCertificateLightbox();
+  }
+}
+
+function showCertificateLightbox(trigger) {
+  setCertificateSlide(Number(trigger.closest(".cert-slide").dataset.certIndex));
+  updateCertificateLightbox();
+  certificateLightbox.showModal();
+}
+
+document.querySelector(".cert-previous").addEventListener("click", () => {
+  setCertificateSlide(certificateIndex - 1);
+});
+
+document.querySelector(".cert-next").addEventListener("click", () => {
+  setCertificateSlide(certificateIndex + 1);
+});
+
+certificateDots.forEach((dot, index) => {
+  dot.addEventListener("click", () => setCertificateSlide(index));
+});
+
+certificateCarousel.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+    event.preventDefault();
+    setCertificateSlide(certificateIndex + (event.key === "ArrowRight" ? 1 : -1));
   }
 });
 
-dialog.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") {
-    event.preventDefault();
-    dialog.close();
+certificateCarousel.addEventListener("click", (event) => {
+  const trigger = event.target.closest(".cert-image-trigger");
+  if (trigger) {
+    showCertificateLightbox(trigger);
   }
+});
+
+let swipeStartX = null;
+certificateCarousel.addEventListener("pointerdown", (event) => {
+  if (event.pointerType === "touch") {
+    swipeStartX = event.clientX;
+  }
+});
+
+certificateCarousel.addEventListener("pointerup", (event) => {
+  if (swipeStartX === null) {
+    return;
+  }
+
+  const swipeDistance = event.clientX - swipeStartX;
+  swipeStartX = null;
+
+  if (Math.abs(swipeDistance) >= 50) {
+    setCertificateSlide(certificateIndex + (swipeDistance < 0 ? 1 : -1));
+  }
+});
+
+certificateCarousel.addEventListener("pointercancel", () => {
+  swipeStartX = null;
+});
+
+document.querySelector(".lightbox-previous").addEventListener("click", () => {
+  setCertificateSlide(certificateIndex - 1);
+});
+
+document.querySelector(".lightbox-next").addEventListener("click", () => {
+  setCertificateSlide(certificateIndex + 1);
+});
+
+lightboxClose.addEventListener("click", () => {
+  certificateLightbox.close();
+});
+
+certificateLightbox.addEventListener("click", (event) => {
+  if (event.target === certificateLightbox) {
+    certificateLightbox.close();
+  }
+});
+
+certificateLightbox.addEventListener("keydown", (event) => {
+  if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
+    event.preventDefault();
+    setCertificateSlide(certificateIndex + (event.key === "ArrowRight" ? 1 : -1));
+  } else if (event.key === "Escape") {
+    event.preventDefault();
+    certificateLightbox.close();
+  }
+});
+
+certificateLightbox.addEventListener("cancel", (event) => {
+  event.preventDefault();
+  certificateLightbox.close();
+});
+
+certificateLightbox.addEventListener("close", () => {
+  certificateSlides[certificateIndex].querySelector(".cert-image-trigger").focus();
+});
+
+[dialog, figmaDialog].forEach((activeDialog) => {
+  activeDialog.addEventListener("click", (event) => {
+    if (event.target === activeDialog) {
+      activeDialog.close();
+    }
+  });
+
+  activeDialog.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      activeDialog.close();
+    }
+  });
+});
+
+figmaDialog.addEventListener("close", () => {
+  figmaFrame.removeAttribute("src");
 });
 
 function getFieldError(field) {

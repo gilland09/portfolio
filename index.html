@@ -24,6 +24,14 @@
     <script src="js/main.js" defer></script>
   </head>
   <body>
+    <svg class="icon-sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+      <symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M5.2 3.5a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM3.3 9.5h3.8v11H3.3v-11Zm6.2 0h3.6V11h.1c.5-.9 1.7-1.9 3.6-1.9 3.9 0 4.6 2.5 4.6 5.7v5.7h-3.8v-5c0-1.2 0-2.9-1.8-2.9s-2.1 1.4-2.1 2.8v5.1H9.5v-11Z"/></symbol>
+      <symbol id="icon-github" viewBox="0 0 24 24"><path d="M12 .9a11.2 11.2 0 0 0-3.5 21.8c.6.1.8-.2.8-.6v-2.1c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.6-1.3-1.6-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.7 1.3 3.3 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.6 0-1.2.4-2.2 1.2-3-.1-.3-.5-1.5.1-3 0 0 1-.3 3.1 1.2a10.7 10.7 0 0 1 5.7 0c2.1-1.5 3.1-1.2 3.1-1.2.6 1.5.2 2.7.1 3 .8.8 1.2 1.8 1.2 3 0 4.3-2.7 5.3-5.3 5.6.4.3.8 1 .8 2v3c0 .4.2.7.8.6A11.2 11.2 0 0 0 12 .9Z"/></symbol>
+      <symbol id="icon-facebook" viewBox="0 0 24 24"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.2H7.6V13h2.7v8h3.2Z"/></symbol>
+      <symbol id="icon-instagram" viewBox="0 0 24 24"><path d="M7.2 2.5h9.6a4.7 4.7 0 0 1 4.7 4.7v9.6a4.7 4.7 0 0 1-4.7 4.7H7.2a4.7 4.7 0 0 1-4.7-4.7V7.2a4.7 4.7 0 0 1 4.7-4.7Zm0 1.9a2.8 2.8 0 0 0-2.8 2.8v9.6a2.8 2.8 0 0 0 2.8 2.8h9.6a2.8 2.8 0 0 0 2.8-2.8V7.2a2.8 2.8 0 0 0-2.8-2.8H7.2Zm10.1 1.4a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2ZM12 7.3a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 1.9a2.8 2.8 0 1 0 0 5.6 2.8 2.8 0 0 0 0-5.6Z"/></symbol>
+      <symbol id="icon-x" viewBox="0 0 24 24"><path d="M18.9 2.5h3.3l-7.2 8.2 8.5 10.8h-6.7l-5.2-6.8-6 6.8H2.3l7.7-8.8L1.9 2.5h6.9l4.7 6.2 5.4-6.2Zm-1.2 17.1h1.8L7.1 4.3H5.2l12.5 15.3Z"/></symbol>
+    </svg>
+
     <!-- A skip link lets keyboard and screen-reader users bypass repeated navigation. -->
     <a class="skip-link" href="#main-content">Skip to main content</a>
 
@@ -68,12 +76,19 @@
             <p class="hero-summary">BS Computer Science student at Biliran Province State University (BiPSU) specializing in Full-Stack Web Development (Django, Next.js, FastAPI) and Applied Machine Learning (YOLOv11, Clinical Decision Support Systems).</p>
             <div class="hero-actions">
               <a class="button btn btn--primary button-primary" href="#projects">Explore Featured Work <span aria-hidden="true">↗</span></a>
-              <a class="button btn btn--outline button-secondary" href="https://gillandsabile09.pythonanywhere.com" target="_blank" rel="noopener noreferrer">View Live Capstone (Altruria) <span aria-hidden="true">↗</span></a>
+              <a class="button btn btn--outline button-secondary" href="https://gilland09.github.io/altruria/frontend/index.html" target="_blank" rel="noopener noreferrer">Launch Altruria Storefront <span aria-hidden="true">↗</span></a>
             </div>
             <ul class="hero-meta" aria-label="Professional focus">
               <li><span class="meta-mark" aria-hidden="true">01</span> Full-stack engineering</li>
               <li><span class="meta-mark" aria-hidden="true">02</span> Applied machine learning</li>
             </ul>
+            <nav class="social-links hero-social" aria-label="Gilland's social profiles">
+              <a href="https://www.linkedin.com/in/gilland-gilter-sabile-2a1040304/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)"><svg aria-hidden="true"><use href="#icon-linkedin"></use></svg></a>
+              <a href="https://github.com/gilland09" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)"><svg aria-hidden="true"><use href="#icon-github"></use></svg></a>
+              <a href="https://www.facebook.com/kingofthegill09" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile (opens in a new tab)"><svg aria-hidden="true"><use href="#icon-facebook"></use></svg></a>
+              <a href="https://www.instagram.com/omfg1lland/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile (opens in a new tab)"><svg aria-hidden="true"><use href="#icon-instagram"></use></svg></a>
+              <a href="https://x.com/g1g9s9s9" target="_blank" rel="noopener noreferrer" aria-label="X profile (opens in a new tab)"><svg aria-hidden="true"><use href="#icon-x"></use></svg></a>
+            </nav>
           </div>
           <aside class="hero-aside" aria-label="Portfolio introduction">
             <div class="portrait-placeholder" role="img" aria-label="Portrait image placeholder for Gilland Sabile">
@@ -141,9 +156,10 @@
                     <p class="project-type">Featured case study <span class="live-badge badge"><span aria-hidden="true"></span>Live</span></p>
                     <h3>Altruria <span class="project-subtitle">— Farm-to-Consumer E-Commerce Web Application</span></h3>
                   </div>
-                  <a class="text-link" href="https://gillandsabile09.pythonanywhere.com" target="_blank" rel="noopener noreferrer" aria-label="Open Altruria live application in a new tab">Live site <span aria-hidden="true">↗</span></a>
+                  <a class="text-link" href="https://gilland09.github.io/altruria/frontend/index.html" target="_blank" rel="noopener noreferrer" aria-label="Launch the Altruria storefront in a new tab">Launch Live Storefront <span aria-hidden="true">↗</span></a>
                 </div>
-                <p>A full-stack e-commerce platform connecting customers with local produce. Includes 13 REST API endpoints, persistent cart, multi-step checkout with GCash, bank transfer, and cash on delivery, plus admin order lifecycle tracking.</p>
+                <p>A farm-to-consumer e-commerce platform with 13 REST API endpoints, a persistent cart, multi-step checkout (GCash, bank transfer, and COD), and admin order lifecycle tracking. Its decoupled client-server deployment pairs a static HTML5/CSS3/JavaScript frontend on GitHub Pages with a Django REST Framework and MySQL backend on PythonAnywhere.</p>
+                <p class="project-endpoint"><strong>Backend API:</strong> <a href="https://gillandsabile09.pythonanywhere.com" target="_blank" rel="noopener noreferrer">gillandsabile09.pythonanywhere.com <span aria-hidden="true">↗</span></a></p>
                 <ul class="tag-list" aria-label="Altruria technology stack">
                   <li>Python</li><li>Django REST Framework</li><li>MySQL (3NF)</li><li>JWT Auth</li><li>Vanilla JS</li><li>WhiteNoise</li>
                 </ul>
@@ -155,7 +171,7 @@
               </div>
             </article>
 
-            <article class="project-card card" data-category="full-stack ai">
+            <article class="project-card card" data-category="full-stack">
               <div class="project-visual visual-pulmo" aria-hidden="true">
                 <span class="visual-label">02 / Clinical decision support</span>
                 <div class="health-ui">
@@ -167,25 +183,31 @@
               </div>
               <div class="project-content">
                 <p class="project-type">Health technology</p>
-                <h3>PulmoCare <span class="project-subtitle">— Clinical Decision Support System &amp; Patient Scheduling</span></h3>
-                <p>A multilingual (English, Tagalog, Cebuano/Bisaya) rule-based NLP symptom matcher with red-flag triage and weighted scoring for Influenza, Pneumonia, Acute Bronchitis, and Tuberculosis. Evaluated with ISO/IEC 25010 (3.94/5.00) and UTAUT2 (4.13/5.00).</p>
+                <h3>PulmoCare <span class="project-subtitle">— Clinical Decision Support System for Pre-Diagnosis of Pulmonary Infections &amp; Patient Appointment Scheduling</span></h3>
+                <p>A deterministic, knowledge-based Clinical Decision Support System built for Naval Doctors Healthcare Services Inc. It uses text normalization and a multilingual symptom phrase dictionary (English, Tagalog, Cebuano/Bisaya) with negation and typo/fuzzy matching, red-flag triage (<code>URGENT</code>, <code>UNRELATED</code>, <code>VALID</code>), guided follow-up questions, and a Decision Tree-Based Rule Engine with weighted scoring (<code>S = (R / M) × 100</code>; minimum match threshold: 50/100) across Influenza, Pneumonia, Acute Bronchitis, and Tuberculosis. Clinic appointments and teleconsultations are integrated into the workflow.</p>
+                <p>Evaluation: ISO/IEC 25010 pooled mean 3.94/5.00 (Maintainability 4.08); UTAUT2 pooled mean 4.13/5.00 across 80 respondents (Performance Expectancy 4.33).</p>
                 <ul class="tag-list" aria-label="PulmoCare technology stack">
-                  <li>Next.js</li><li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>Appwrite</li>
+                  <li>Next.js</li><li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>shadcn/ui</li><li>Appwrite</li><li>Rule-Based Decision Tree</li>
                 </ul>
+                <a class="button btn btn--primary project-launch" href="https://pulmocare-pi.vercel.app" target="_blank" rel="noopener noreferrer">Launch Live App <span aria-hidden="true">↗</span></a>
               </div>
             </article>
 
             <article class="project-card card" data-category="ai">
               <div class="project-visual visual-papaya" aria-hidden="true">
-                <span class="visual-label">03 / Computer vision research</span>
-                <div class="fruit-grid">
-                  <span class="fruit fruit-green"></span><span class="fruit fruit-turning"></span>
-                  <span class="fruit fruit-ripe"></span><span class="fruit fruit-overripe"></span>
+                <span class="visual-label">03 / Submitted research paper</span>
+                <div class="research-benchmark">
+                  <div class="benchmark-heading"><span>COMPUTER VISION STUDY</span><strong>Benchmark</strong></div>
+                  <div class="benchmark-metrics">
+                    <span><strong>7,120</strong><small>Images</small></span>
+                    <span><strong>04</strong><small>Ripeness stages</small></span>
+                  </div>
+                  <div class="benchmark-models"><span>YOLOv11s</span><b>VS</b><span>Faster R-CNN</span></div>
+                  <div class="benchmark-correlation"><span aria-hidden="true">↗</span> Brix sugar correlation</div>
                 </div>
-                <span class="visual-caption">4 ripeness stages <span aria-hidden="true">·</span> 7,120 images</span>
               </div>
               <div class="project-content">
-                <p class="project-type">Applied machine learning</p>
+                <p class="project-type"><span class="research-status">Submitted Research Paper</span></p>
                 <h3>Papaya Ripeness Classification Study</h3>
                 <p>A comparative deep-learning benchmark classifying papaya ripeness across four stages, correlated with Brix sugar content. Models trained and evaluated using a 7,120-image dataset.</p>
                 <ul class="tag-list" aria-label="Papaya study technology stack">
@@ -194,7 +216,7 @@
               </div>
             </article>
 
-            <article class="project-card card" data-category="full-stack ai">
+            <article class="project-card card" data-category="full-stack">
               <div class="project-visual visual-sports" aria-hidden="true">
                 <span class="visual-label">04 / Parallel computing</span>
                 <div class="parallel-visual">
@@ -217,11 +239,18 @@
             <article class="project-card card project-design" data-category="design">
               <div class="project-visual visual-ordinance" aria-hidden="true">
                 <span class="visual-label">05 / Civic technology</span>
-                <div class="ordinance-paper">
-                  <span class="paper-seal">N</span>
-                  <span class="paper-lines"></span>
-                  <span class="paper-lines paper-lines-short"></span>
-                  <span class="paper-button">ORDINANCES</span>
+                <div class="ordinance-wireframe">
+                  <div class="wireframe-topbar"><span>NAVAL MUNICIPAL HALL</span><span></span></div>
+                  <div class="wireframe-layout">
+                    <div class="wireframe-sidebar"><i></i><i></i><i></i><i></i></div>
+                    <div class="wireframe-main">
+                      <strong>Ordinance records</strong>
+                      <span class="wireframe-search"></span>
+                      <span class="wireframe-row"><i></i><span></span><b>2025</b></span>
+                      <span class="wireframe-row"><i></i><span></span><b>2024</b></span>
+                      <span class="wireframe-row"><i></i><span></span><b>2023</b></span>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="project-content">
@@ -231,6 +260,10 @@
                 <ul class="tag-list" aria-label="Municipal ordinance system design tools">
                   <li>Figma</li><li>UI/UX Wireframing</li><li>Interactive Prototyping</li>
                 </ul>
+                <div class="project-actions">
+                  <a class="button btn btn--primary project-launch" href="https://www.figma.com/proto/ULDDltdyR1fwOFg6Gm0YWk/Prototype?node-id=311-2120&amp;p=f&amp;t=q9bMlRXKbq2iMw2g-8&amp;scaling=contain&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;hide-ui=1&amp;fbclid=IwY2xjawVdL21leHRuA2FlbQIxMABwZG9mBWJyaWQRMTJtVEpKZURETDh5eWJ4RmJzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEf132b-NoMW9YenW4qgEpEDRhRKOVx3B2WKoaRT83eudWitD4iVdT86SQYpwc_aem_lIx8Om9xUZbvX_TreraVcw" target="_blank" rel="noopener noreferrer">Open Interactive Figma Prototype <span aria-hidden="true">↗</span></a>
+                  <button class="button btn btn--outline figma-preview-trigger" type="button" aria-haspopup="dialog" aria-controls="figma-preview-modal">Preview Prototype</button>
+                </div>
               </div>
             </article>
           </div>
@@ -275,23 +308,58 @@
             <p class="eyebrow">Learning beyond the classroom</p>
             <h2 id="certificates-title">Milestones &amp; <span class="heading-accent">certificates.</span></h2>
           </div>
-          <div class="certificate-grid">
-            <article class="certificate-card card">
-              <div class="certificate-icon" aria-hidden="true">↗</div>
-              <div>
-                <p class="project-type">International immersion <span class="certificate-date">March 2026</span></p>
-                <h3>International Faculty &amp; Student Immersion Program</h3>
-                <p>Software Development Center, Da Nang University, Vietnam</p>
+          <div class="cert-carousel" role="region" aria-roledescription="carousel" aria-label="Certificates" tabindex="0">
+            <div class="cert-carousel-window">
+              <div class="cert-carousel-track">
+                <article class="cert-slide card" data-cert-index="0" role="group" aria-roledescription="slide" aria-label="1 of 3">
+                  <button class="cert-image-trigger" type="button" aria-label="Expand certificate: International Faculty and Student Immersion Program">
+                    <img src="assets/certs/danang-sdc-immersion.jpeg" alt="International Faculty and Student Immersion Program certificate from Software Development Center, Da Nang University, Vietnam, March 2026" loading="lazy">
+                    <span class="cert-expand-badge">Click to expand</span>
+                  </button>
+                  <div class="cert-slide-copy">
+                    <p class="certificate-meta"><span>International program</span><span>March 2026</span></p>
+                    <h3>International Faculty &amp; Student Immersion Program</h3>
+                    <p class="cert-issuer">Software Development Center (SDC), Da Nang University, Vietnam</p>
+                    <p>Completed a two-week international software engineering and academic immersion program focused on global industry workflows and cross-cultural technical collaboration.</p>
+                  </div>
+                </article>
+                <article class="cert-slide card" data-cert-index="1" role="group" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true" inert>
+                  <button class="cert-image-trigger" type="button" aria-label="Expand certificate: Introduction to AI Literacy and Responsible Use">
+                    <img src="assets/certs/ai-literacy-cert.png" alt="Introduction to AI Literacy and Responsible Use micro-credential certificate, issued September 15, 2026" loading="lazy">
+                    <span class="cert-expand-badge">Click to expand</span>
+                  </button>
+                  <div class="cert-slide-copy">
+                    <p class="certificate-meta"><span>Micro-credential</span><span>September 15, 2026</span></p>
+                    <h3>Introduction to AI Literacy and Responsible Use</h3>
+                    <p class="cert-issuer">CHED, Bagong Pilipinas, ACHIEVE &amp; Mapúa University in collaboration with Arizona State University</p>
+                    <p>Five-hour PQF Level 6 micro-credential covering responsible AI frameworks, prompt engineering, and ethical deployment.</p>
+                    <p class="credential-id"><strong>Credential ID:</strong> ZMX30ER70ALDL</p>
+                  </div>
+                </article>
+                <article class="cert-slide card" data-cert-index="2" role="group" aria-roledescription="slide" aria-label="3 of 3" aria-hidden="true" inert>
+                  <button class="cert-image-trigger" type="button" aria-label="Expand certificate: Integrated OS – Be More Digi-TALINO Webinar">
+                    <img src="assets/certs/integrated-os-cert.png" alt="Integrated OS Be More Digi-TALINO webinar certificate, issued September 5, 2025" loading="lazy">
+                    <span class="cert-expand-badge">Click to expand</span>
+                  </button>
+                  <div class="cert-slide-copy">
+                    <p class="certificate-meta"><span>Digital literacy webinar</span><span>September 5, 2025</span></p>
+                    <h3>Integrated OS – Be More Digi-TALINO Webinar</h3>
+                    <p class="cert-issuer">Integrated Office Solutions, Inc. (Integrated OS)</p>
+                    <p>Training session focused on digital literacy, productivity workflows, smart research, and data safety and security.</p>
+                  </div>
+                </article>
               </div>
-            </article>
-            <article class="certificate-card card">
-              <div class="certificate-icon certificate-icon-green" aria-hidden="true">⌘</div>
-              <div>
-                <p class="project-type">Networking fundamentals</p>
-                <h3>Cisco Networking Basics</h3>
-                <p>Modules 1–17 &amp; Final Certification Exam</p>
+            </div>
+            <div class="cert-carousel-controls">
+              <button class="cert-arrow cert-previous" type="button" aria-label="Previous certificate"><span aria-hidden="true">←</span></button>
+              <div class="cert-pagination" role="group" aria-label="Choose a certificate">
+                <button class="cert-dot is-active" type="button" aria-label="Show certificate 1 of 3" aria-current="true"></button>
+                <button class="cert-dot" type="button" aria-label="Show certificate 2 of 3" aria-current="false"></button>
+                <button class="cert-dot" type="button" aria-label="Show certificate 3 of 3" aria-current="false"></button>
               </div>
-            </article>
+              <p class="cert-slide-status" aria-live="polite">Certificate 1 of 3</p>
+              <button class="cert-arrow cert-next" type="button" aria-label="Next certificate"><span aria-hidden="true">→</span></button>
+            </div>
           </div>
         </div>
       </section>
@@ -308,7 +376,7 @@
                 <span>gillandsabile09@gmail.com</span>
                 <span>gilland.sabile@bipsu.edu.ph</span>
               </a>
-              <a class="contact-card" href="https://github.com/gilland09" target="_blank" rel="noopener noreferrer">
+              <a class="contact-card" href="https://github.com/gilland09" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)">
                 <span class="contact-card-label">GitHub</span>
                 <span>github.com/gilland09 <span aria-hidden="true">↗</span></span>
               </a>
@@ -317,6 +385,13 @@
                 <span>Naval, Biliran, Philippines</span>
               </div>
             </address>
+            <nav class="social-links contact-social" aria-label="Gilland's social profiles">
+              <a href="https://www.linkedin.com/in/gilland-gilter-sabile-2a1040304/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)"><svg aria-hidden="true"><use href="#icon-linkedin"></use></svg><span>LinkedIn</span></a>
+              <a href="https://github.com/gilland09" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)"><svg aria-hidden="true"><use href="#icon-github"></use></svg><span>GitHub</span></a>
+              <a href="https://www.facebook.com/kingofthegill09" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile (opens in a new tab)"><svg aria-hidden="true"><use href="#icon-facebook"></use></svg><span>Facebook</span></a>
+              <a href="https://www.instagram.com/omfg1lland/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile (opens in a new tab)"><svg aria-hidden="true"><use href="#icon-instagram"></use></svg><span>Instagram</span></a>
+              <a href="https://x.com/g1g9s9s9" target="_blank" rel="noopener noreferrer" aria-label="X profile (opens in a new tab)"><svg aria-hidden="true"><use href="#icon-x"></use></svg><span>X</span></a>
+            </nav>
           </div>
           <!-- Explicit labels and native required fields support keyboard, assistive tech, and browser validation. -->
           <form class="contact-form" action="mailto:gillandsabile09@gmail.com" method="post" enctype="text/plain" novalidate>
@@ -362,6 +437,13 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
+        <nav class="social-links footer-social" aria-label="Gilland's social profiles">
+          <a href="https://www.linkedin.com/in/gilland-gilter-sabile-2a1040304/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)"><svg aria-hidden="true"><use href="#icon-linkedin"></use></svg></a>
+          <a href="https://github.com/gilland09" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile (opens in a new tab)"><svg aria-hidden="true"><use href="#icon-github"></use></svg></a>
+          <a href="https://www.facebook.com/kingofthegill09" target="_blank" rel="noopener noreferrer" aria-label="Facebook profile (opens in a new tab)"><svg aria-hidden="true"><use href="#icon-facebook"></use></svg></a>
+          <a href="https://www.instagram.com/omfg1lland/" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile (opens in a new tab)"><svg aria-hidden="true"><use href="#icon-instagram"></use></svg></a>
+          <a href="https://x.com/g1g9s9s9" target="_blank" rel="noopener noreferrer" aria-label="X profile (opens in a new tab)"><svg aria-hidden="true"><use href="#icon-x"></use></svg></a>
+        </nav>
         <p class="footer-note">Hand-crafted with Semantic HTML5, CSS Grid/Flexbox, and WCAG AA accessibility in mind.</p>
       </div>
     </footer>
@@ -382,8 +464,9 @@
         </section>
         <section aria-labelledby="modal-architecture">
           <h3 id="modal-architecture">Technical architecture</h3>
-          <p>Altruria pairs a Django REST Framework API and MySQL database normalized to third normal form with a Vanilla JavaScript storefront. JWT authentication protects account flows; persistent cart behavior, multi-step checkout (GCash, bank transfer, and COD), and admin order lifecycle tracking support the end-to-end experience. WhiteNoise serves static assets in deployment.</p>
+          <p>Altruria uses a decoupled client-server deployment: a static HTML5/CSS3/JavaScript storefront hosted on GitHub Pages communicates through REST endpoints and JWT authentication with a Django REST Framework API and MySQL database hosted on PythonAnywhere. Persistent cart behavior, multi-step checkout (GCash, bank transfer, and COD), and admin order lifecycle tracking support the end-to-end experience.</p>
           <ul class="tag-list"><li>13 REST API endpoints</li><li>MySQL (3NF)</li><li>JWT authentication</li><li>Responsive storefront</li></ul>
+          <p><strong>Frontend:</strong> <a href="https://gilland09.github.io/altruria/frontend/index.html" target="_blank" rel="noopener noreferrer">GitHub Pages storefront</a><br><strong>Backend API:</strong> <a href="https://gillandsabile09.pythonanywhere.com" target="_blank" rel="noopener noreferrer">PythonAnywhere API</a></p>
         </section>
         <section aria-labelledby="modal-results">
           <h3 id="modal-results">Results</h3>
@@ -398,7 +481,44 @@
         </section>
       </div>
       <div class="modal-footer">
-        <a class="button button-primary" href="https://gillandsabile09.pythonanywhere.com" target="_blank" rel="noopener noreferrer">Visit Altruria <span aria-hidden="true">↗</span></a>
+        <a class="button btn btn--primary" href="https://gilland09.github.io/altruria/frontend/index.html" target="_blank" rel="noopener noreferrer">Launch Live Storefront <span aria-hidden="true">↗</span></a>
+        <a class="button btn btn--outline" href="https://gillandsabile09.pythonanywhere.com" target="_blank" rel="noopener noreferrer">Open Backend API <span aria-hidden="true">↗</span></a>
+      </div>
+    </dialog>
+
+    <dialog class="lightbox-modal" id="cert-lightbox" aria-labelledby="lightbox-title">
+      <div class="lightbox-header">
+        <p class="eyebrow">Certificate <span class="lightbox-counter">1 of 3</span></p>
+        <button class="icon-button lightbox-close" type="button" aria-label="Close certificate lightbox">×</button>
+      </div>
+      <div class="lightbox-content">
+        <button class="cert-arrow lightbox-previous" type="button" aria-label="Previous certificate"><span aria-hidden="true">←</span></button>
+        <figure>
+          <img class="lightbox-image" src="assets/certs/danang-sdc-immersion.jpeg" alt="">
+          <figcaption>
+            <h2 id="lightbox-title"></h2>
+            <p class="lightbox-issuer"></p>
+            <p class="lightbox-description"></p>
+          </figcaption>
+        </figure>
+        <button class="cert-arrow lightbox-next" type="button" aria-label="Next certificate"><span aria-hidden="true">→</span></button>
+      </div>
+    </dialog>
+
+    <!-- The prototype preview is loaded only on request, preserving initial page performance. -->
+    <dialog class="case-study-modal figma-preview-modal" id="figma-preview-modal" aria-labelledby="figma-preview-title">
+      <div class="modal-header">
+        <div>
+          <p class="eyebrow">Interactive prototype</p>
+          <h2 id="figma-preview-title">Municipal Ordinance Management System</h2>
+        </div>
+        <button class="icon-button modal-close figma-preview-close" type="button" aria-label="Close Figma prototype preview">×</button>
+      </div>
+      <div class="figma-embed">
+        <iframe title="Interactive Figma prototype for the Municipal Ordinance Management System" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <div class="modal-footer">
+        <a class="button btn btn--primary" href="https://www.figma.com/proto/ULDDltdyR1fwOFg6Gm0YWk/Prototype?node-id=311-2120&amp;p=f&amp;t=q9bMlRXKbq2iMw2g-8&amp;scaling=contain&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;hide-ui=1&amp;fbclid=IwY2xjawVdL21leHRuA2FlbQIxMABwZG9mBWJyaWQRMTJtVEpKZURETDh5eWJ4RmJzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEf132b-NoMW9YenW4qgEpEDRhRKOVx3B2WKoaRT83eudWitD4iVdT86SQYpwc_aem_lIx8Om9xUZbvX_TreraVcw" target="_blank" rel="noopener noreferrer">Open in Figma <span aria-hidden="true">↗</span></a>
       </div>
     </dialog>
   </body>

@@ -9,6 +9,51 @@ This is the requested deployment URL; availability and deployment configuration 
 
 The site presents Gilland Gilter S. Sabile’s computer science background, selected full-stack and applied-AI work, technical skills, certificates, and contact options. It is intended for recruiters, software engineering teams, academic evaluators, and potential collaborators who want to review project outcomes and implementation choices.
 
+## Live projects and methodologies
+
+### Altruria — Farm-to-Consumer E-Commerce
+
+- **Storefront:** <https://gilland09.github.io/altruria/frontend/index.html>
+- **Backend API:** <https://gillandsabile09.pythonanywhere.com>
+- **Deployment:** Decoupled client-server architecture. Static HTML5/CSS3/JavaScript is hosted on GitHub Pages; the Django REST Framework API and MySQL database are hosted on PythonAnywhere. The client communicates with the API over REST and uses JWT authentication.
+- **Highlights:** 13 REST endpoints, persistent cart, multi-step GCash/bank-transfer/COD checkout, and admin order lifecycle management.
+
+### PulmoCare — Clinical Decision Support and Scheduling
+
+- **Live app:** <https://pulmocare-pi.vercel.app>
+- Built for **Naval Doctors Healthcare Services Inc.** as a deterministic, knowledge-based Clinical Decision Support System.
+- The deterministic pipeline performs text normalization and phrase-dictionary matching across English, Tagalog, and Cebuano/Bisaya, with negation handling and typo/fuzzy matching. Red-flag triage classifies inputs as `URGENT`, `UNRELATED`, or `VALID`; guided follow-up questions gather missing symptom information.
+- A Decision Tree-Based Rule Engine applies the weighted score `S = (R / M) × 100` with a 50/100 minimum match threshold against four disease profiles: Influenza, Pneumonia, Acute Bronchitis, and Tuberculosis. The workflow includes clinic appointment and teleconsultation scheduling.
+- **Stack:** Next.js, React, TypeScript, Tailwind CSS, shadcn/ui, and Appwrite.
+- **Evaluation:** ISO/IEC 25010 pooled mean 3.94/5.00 (Maintainability 4.08); UTAUT2 pooled mean 4.13/5.00 across 80 respondents (Performance Expectancy 4.33).
+
+### Papaya Ripeness Classification Study
+
+A submitted academic research paper (not a web prototype) compares YOLOv11s and Faster R-CNN on a 7,120-image dataset across four ripeness stages, with Brix sugar correlation.
+
+### Municipal Ordinance Management System
+
+- **Interactive Figma prototype:** <https://www.figma.com/proto/ULDDltdyR1fwOFg6Gm0YWk/Prototype?node-id=311-2120&p=f&t=q9bMlRXKbq2iMw2g-8&scaling=contain&content-scaling=fixed&page-id=0%3A1&hide-ui=1&fbclid=IwY2xjawVdL21leHRuA2FlbQIxMABwZG9mBWJyaWQRMTJtVEpKZURETDh5eWJ4RmJzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEf132b-NoMW9YenW4qgEpEDRhRKOVx3B2WKoaRT83eudWitD4iVdT86SQYpwc_aem_lIx8Om9xUZbvX_TreraVcw>
+- The portfolio card includes a CSS wireframe preview and a deferred Figma embed preview, in addition to the direct prototype link.
+
+## Certificate credentials
+
+The certificate section is an accessible, keyboard- and touch-operable image carousel. Select a certificate image to open its expanded native-dialog lightbox; use its previous/next controls or keyboard arrows to browse.
+
+1. **International Faculty & Student Immersion Program** — Software Development Center (SDC), Da Nang University, Vietnam (March 2026). A two-week international software engineering and academic immersion program focused on global industry workflows and cross-cultural technical collaboration. Image: [`assets/certs/danang-sdc-immersion.jpeg`](assets/certs/danang-sdc-immersion.jpeg)
+2. **Introduction to AI Literacy and Responsible Use** — CHED, Bagong Pilipinas, ACHIEVE, and Mapúa University in collaboration with Arizona State University (September 15, 2026; credential ID `ZMX30ER70ALDL`). Five-hour PQF Level 6 micro-credential covering responsible AI frameworks, prompt engineering, and ethical deployment. Image: [`assets/certs/ai-literacy-cert.png`](assets/certs/ai-literacy-cert.png)
+3. **Integrated OS – Be More Digi-TALINO Webinar** — Integrated Office Solutions, Inc. (September 5, 2025). Digital literacy, productivity workflows, smart research, and data safety and security. Image: [`assets/certs/integrated-os-cert.png`](assets/certs/integrated-os-cert.png)
+
+## Social profiles
+
+The hero, contact section, and footer provide direct, labeled links to the official profiles:
+
+- [LinkedIn](https://www.linkedin.com/in/gilland-gilter-sabile-2a1040304/)
+- [GitHub](https://github.com/gilland09)
+- [Facebook](https://www.facebook.com/kingofthegill09)
+- [Instagram](https://www.instagram.com/omfg1lland/)
+- [X](https://x.com/g1g9s9s9)
+
 ## Repository walkthrough
 
 ```text
@@ -19,24 +64,28 @@ portfolio/
 │   ├── variables.css        Shared design tokens and light-theme overrides
 │   ├── base.css             Reset, global type, focus, and reduced-motion baseline
 │   ├── layout.css           Containers, macro layouts, and responsive breakpoints
-│   ├── components.css       Navigation, buttons, cards, forms, and dialog
-│   └── animations.css       Reveals, hover states, spotlights, and motion guard
+│   ├── components.css       Navigation, buttons, cards, carousel, lightbox, forms, and dialogs
+│   └── animations.css       Reveals, hover states, carousel motion, spotlights, and motion guard
 ├── js/
 │   └── main.js              Theme, menu, filters, scroll spy, dialog, and contact flow
 └── assets/
+    ├── certs/
+    │   ├── danang-sdc-immersion.jpeg
+    │   ├── ai-literacy-cert.png
+    │   └── integrated-os-cert.png
     └── images/
-        └── .gitkeep         Placeholder directory for future portfolio media
+        └── .gitkeep          Placeholder directory for future portfolio media
 ```
 
 ### Architecture and code walkthrough
 
-- `index.html` owns the landmarks, heading hierarchy, project content, accessible form labels, and native case-study dialog. Stylesheets load in dependency order, followed by deferred JavaScript.
+- `index.html` owns the landmarks, heading hierarchy, project content, accessible form labels, certificate carousel/lightbox markup, shared SVG social icons, and native dialogs. Stylesheets load in dependency order, followed by deferred JavaScript.
 - `variables.css` is the single source for palette, type, spacing, radii, shadows, and transition tokens. BEM-style component variants consume these custom properties so theme or scale changes do not duplicate values.
 - `base.css` defines the global reset, typography, focus treatment, and reduced-motion defaults. Shared token references keep global defaults aligned with the component layers.
 - `layout.css` owns page-wide composition and breakpoint behavior. Semantic/BEM class hooks identify layout roles; Grid handles 2D composition and Flexbox handles 1D alignment.
-- `components.css` contains reusable interface styles. BEM-inspired names such as `.btn--primary` and `.project-card--featured` express variants while shared custom properties avoid repeating color, spacing, and motion values.
-- `animations.css` contains motion and interactive states on reusable BEM component classes. It reuses design tokens and custom properties for consistent timing, accent colors, and pointer/stagger values.
-- `main.js` progressively enhances the static document: it toggles BEM state classes, synchronizes UI state with ARIA, observes reveals and sections, sets CSS custom properties for visual effects, filters projects, and prepares email links without requiring a server.
+- `components.css` contains reusable interface styles. BEM-inspired names such as `.btn--primary`, `.project-card--featured`, and `.cert-slide` express variants while shared custom properties avoid repeating color, spacing, and motion values.
+- `animations.css` contains motion and interactive states on reusable BEM component classes, including reduced-motion-aware carousel transitions. It reuses design tokens and custom properties for consistent timing, accent colors, and pointer/stagger values.
+- `main.js` progressively enhances the static document: it toggles BEM state classes, synchronizes UI state with ARIA, observes reveals and sections, sets CSS custom properties for visual effects, filters projects, drives the certificate carousel/lightbox, and prepares email links without requiring a server.
 
 ### Run locally
 
@@ -133,7 +182,7 @@ Chrome/Chromium browser checks were run against the local static server during d
 | 1024px | Pass — no horizontal overflow |
 | 1440px | Pass — no horizontal overflow |
 
-Other browser-session checks covered dark/light focus indicators, project filters, menu open/close and Escape behavior, dialog Escape dismissal, scroll spy, reduced-motion display, pointer spotlight updates, and invalid/valid contact-form states.
+Other browser-session checks covered dark/light focus indicators, project filters, menu open/close and Escape behavior, dialog Escape dismissal, scroll spy, reduced-motion display, pointer spotlight updates, and invalid/valid contact-form states. The certificate carousel was also checked for all three image loads, arrow/dot and keyboard navigation, touch-swipe behavior, expanded lightbox content, lightbox next navigation, Escape/backdrop dismissal, focus restoration, and reduced-motion transitions.
 
 ### Cross-browser status
 

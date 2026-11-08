@@ -34,6 +34,41 @@
   isolation: isolate;
 }
 
+.cert-carousel-track {
+  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.cert-image-trigger img {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cert-image-trigger:hover img,
+.cert-image-trigger:focus-visible img {
+  transform: scale(1.025);
+}
+
+.cert-image-trigger:hover .cert-expand-badge,
+.cert-image-trigger:focus-visible .cert-expand-badge {
+  transform: translateY(-2px);
+  opacity: 1;
+}
+
+.lightbox-modal[open] {
+  animation: lightbox-enter 0.22s ease-out both;
+}
+
+@keyframes lightbox-enter {
+  from {
+    transform: translateY(0.75rem) scale(0.985);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
 .project-card::before {
   position: absolute;
   z-index: 0;
@@ -124,6 +159,53 @@
   .contact-form-actions .button {
     width: 100%;
   }
+
+  .cert-slide {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-3);
+  }
+
+  .cert-image-trigger {
+    min-height: 12rem;
+    max-height: 45vh;
+  }
+
+  .cert-carousel-controls {
+    gap: var(--space-1);
+  }
+
+  .lightbox-modal {
+    width: calc(100% - 1rem);
+    padding: var(--space-2);
+  }
+
+  .lightbox-content {
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    gap: 0;
+  }
+
+  .lightbox-content .cert-arrow {
+    width: 44px;
+  }
+
+  .lightbox-image {
+    max-height: 58vh;
+  }
+}
+
+@media (max-width: 420px) {
+  .cert-slide-status {
+    min-width: 5.5rem;
+    font-size: 0.68rem;
+  }
+
+  .cert-carousel-controls {
+    gap: 0;
+  }
+
+  .lightbox-content h2 {
+    font-size: var(--text-lg);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -143,6 +225,14 @@
 
   .project-card::before {
     display: none;
+  }
+
+  .cert-carousel-track,
+  .cert-image-trigger img,
+  .cert-expand-badge,
+  .lightbox-modal[open] {
+    animation: none;
+    transition: none;
   }
 
   ::view-transition-group(*),
