@@ -144,13 +144,6 @@
   gap: var(--space-2);
 }
 
-.meta-mark,
-.skill-index {
-  color: var(--color-accent);
-  font-family: var(--font-mono);
-  font-size: var(--text-xs);
-}
-
 .hero-aside {
   max-width: 22rem;
   justify-self: end;
@@ -232,6 +225,19 @@
 
 .about-copy p + p {
   margin-top: var(--space-4);
+}
+
+#about .section-header h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+#about .about-copy p {
+  font-size: var(--text-about-body);
+  line-height: 1.65;
+}
+
+#about .about-copy p:first-child {
+  font-size: var(--text-about-lead);
 }
 
 .metrics-grid {

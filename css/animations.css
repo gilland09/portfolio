@@ -166,8 +166,8 @@
   }
 
   .cert-image-trigger {
-    min-height: 12rem;
-    max-height: 45vh;
+    min-height: 0;
+    max-height: none;
   }
 
   .cert-carousel-controls {

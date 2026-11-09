@@ -207,9 +207,11 @@
 
 .bento-grid,
 .project-grid {
-  /* Grid reserves two dimensions for the responsive featured-work composition. */
+  /* Equal implicit rows keep project cards aligned while Grid handles the 2D gallery. */
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  align-items: stretch;
   gap: var(--space-3);
 }
 
@@ -235,27 +237,16 @@
   display: none;
 }
 
-.project-card--featured,
-.project-featured {
-  display: grid;
-  grid-column: span 2;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
-}
-
 .project-visual {
   position: relative;
   display: grid;
-  min-height: 15rem;
+  height: var(--project-visual-height);
+  min-height: var(--project-visual-height);
+  flex: 0 0 var(--project-visual-height);
   overflow: hidden;
   place-items: center;
   border-bottom: 1px solid var(--color-border);
   background: var(--color-surface-raised);
-}
-
-.project-featured .project-visual {
-  min-height: 100%;
-  border-right: 1px solid var(--color-border);
-  border-bottom: 0;
 }
 
 .visual-label {
@@ -626,12 +617,8 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  align-items: start;
+  align-items: stretch;
   padding: var(--space-4);
-}
-
-.project-featured .project-content {
-  padding: clamp(var(--space-4), 4vw, var(--space-6));
 }
 
 .project-type {
@@ -674,46 +661,17 @@
 }
 
 .project-content h3 {
+  display: -webkit-box;
+  min-height: 2.6em;
   margin-bottom: var(--space-2);
-}
-
-.project-subtitle {
-  color: var(--color-muted);
-  font-size: 0.78em;
-  font-weight: 600;
-  letter-spacing: -0.02em;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
 }
 
 .project-content > p:not(.project-type) {
+  min-height: 6.6em;
   font-size: var(--text-sm);
-}
-
-.project-endpoint {
-  overflow-wrap: anywhere;
-}
-
-.project-endpoint strong,
-.project-endpoint a {
-  color: var(--color-text);
-}
-
-.project-endpoint a:hover {
-  color: var(--color-accent-strong);
-}
-
-.project-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-  margin-top: var(--space-3);
-}
-
-.project-launch {
-  margin-top: var(--space-3);
-}
-
-.project-actions .project-launch {
-  margin-top: 0;
 }
 
 .tag-list {
@@ -736,18 +694,6 @@
   line-height: 1.5;
 }
 
-.project-title-line {
-  display: flex;
-  width: 100%;
-  align-items: start;
-  justify-content: space-between;
-  gap: var(--space-3);
-}
-
-.project-title-line > div {
-  min-width: 0;
-}
-
 .text-link {
   display: inline-flex;
   flex: 0 0 auto;
@@ -766,12 +712,13 @@
 }
 
 .project-footer {
-  display: flex;
+  display: grid;
   width: 100%;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
+  justify-items: start;
   gap: var(--space-3);
-  margin-top: var(--space-4);
+  margin-top: auto;
   padding-top: var(--space-3);
   border-top: 1px solid var(--color-border);
 }
@@ -785,10 +732,6 @@
   color: var(--color-text);
   font-family: var(--font-mono);
   font-weight: 500;
-}
-
-.project-footer .modal-trigger {
-  margin-left: auto;
 }
 
 .skills-grid {
@@ -849,8 +792,7 @@
   position: relative;
   display: grid;
   width: 100%;
-  min-height: 15rem;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 11;
   place-items: center;
   overflow: hidden;
   padding: var(--space-2);
@@ -1044,6 +986,8 @@
 
 .lightbox-image {
   width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 11;
   max-height: min(68vh, 52rem);
   object-fit: contain;
   border-radius: var(--radius-sm);
@@ -1418,12 +1362,6 @@
   .project-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
-  .project-card--featured,
-  .project-featured {
-    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-  }
-
 }
 
 @media (max-width: 767px) {
@@ -1485,29 +1423,8 @@
     min-height: 65vh;
   }
 
-  .project-card--featured,
-  .project-featured {
-    display: flex;
-    grid-column: auto;
-  }
-
-  .project-card--featured .project-visual,
-  .project-featured .project-visual {
-    min-height: 15rem;
-    border-right: 0;
-    border-bottom: 1px solid var(--color-border);
-  }
-
   .modal-content {
     grid-template-columns: 1fr;
-  }
-
-  .project-title-line {
-    flex-direction: column;
-  }
-
-  .project-footer .modal-trigger {
-    margin-left: 0;
   }
 
   .footer-inner {

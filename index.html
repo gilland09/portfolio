@@ -79,8 +79,8 @@
               <a class="button btn btn--outline button-secondary" href="https://gilland09.github.io/altruria/frontend/index.html" target="_blank" rel="noopener noreferrer">Launch Altruria Storefront <span aria-hidden="true">↗</span></a>
             </div>
             <ul class="hero-meta" aria-label="Professional focus">
-              <li><span class="meta-mark" aria-hidden="true">01</span> Full-stack engineering</li>
-              <li><span class="meta-mark" aria-hidden="true">02</span> Applied machine learning</li>
+              <li>Full-stack engineering</li>
+              <li>Applied machine learning</li>
             </ul>
             <nav class="social-links hero-social" aria-label="Gilland's social profiles">
               <a href="https://www.linkedin.com/in/gilland-gilter-sabile-2a1040304/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile (opens in a new tab)"><svg aria-hidden="true"><use href="#icon-linkedin"></use></svg></a>
@@ -128,7 +128,7 @@
               <p class="eyebrow">Selected work</p>
               <h2 id="projects-title">Projects with <span class="heading-accent">purpose.</span></h2>
             </div>
-            <p class="section-intro">A selection of web applications, machine-learning studies, and systems design work.</p>
+            <p class="section-intro">Web applications, computer vision research, and civic systems design.</p>
           </div>
           <div class="filter-row" role="group" aria-label="Filter projects by category">
             <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">All</button>
@@ -139,9 +139,9 @@
 
           <!-- Articles make each independently meaningful project discoverable as a content item. -->
           <div class="project-grid bento-grid" id="project-grid">
-            <article class="project-card card project-featured project-card--featured" data-category="full-stack">
+            <article class="project-card card" data-category="full-stack">
               <div class="project-visual visual-altruria" aria-hidden="true">
-                <span class="visual-label">01 / Commerce platform</span>
+                <span class="visual-label">Commerce platform</span>
                 <div class="architecture-preview">
                   <div class="architecture-node"><span>CLIENT</span><strong>Vanilla JS</strong></div>
                   <span class="architecture-link" aria-hidden="true">→</span>
@@ -151,15 +151,9 @@
                 </div>
               </div>
               <div class="project-content">
-                <div class="project-title-line">
-                  <div>
-                    <p class="project-type">Featured case study <span class="live-badge badge"><span aria-hidden="true"></span>Live</span></p>
-                    <h3>Altruria <span class="project-subtitle">— Farm-to-Consumer E-Commerce Web Application</span></h3>
-                  </div>
-                  <a class="text-link" href="https://gilland09.github.io/altruria/frontend/index.html" target="_blank" rel="noopener noreferrer" aria-label="Launch the Altruria storefront in a new tab">Launch Live Storefront <span aria-hidden="true">↗</span></a>
-                </div>
-                <p>A farm-to-consumer e-commerce platform with 13 REST API endpoints, a persistent cart, multi-step checkout (GCash, bank transfer, and COD), and admin order lifecycle tracking. Its decoupled client-server deployment pairs a static HTML5/CSS3/JavaScript frontend on GitHub Pages with a Django REST Framework and MySQL backend on PythonAnywhere.</p>
-                <p class="project-endpoint"><strong>Backend API:</strong> <a href="https://gillandsabile09.pythonanywhere.com" target="_blank" rel="noopener noreferrer">gillandsabile09.pythonanywhere.com <span aria-hidden="true">↗</span></a></p>
+                <p class="project-type">Farm-to-consumer commerce <span class="live-badge badge"><span aria-hidden="true"></span>Live</span></p>
+                <h3>Altruria</h3>
+                <p>A full-stack farm-to-consumer e-commerce platform featuring 13 REST API endpoints, JWT authentication, and multi-step checkout. Built with a static Vanilla JS storefront on GitHub Pages connected to a Django REST and MySQL backend on PythonAnywhere.</p>
                 <ul class="tag-list" aria-label="Altruria technology stack">
                   <li>Python</li><li>Django REST Framework</li><li>MySQL (3NF)</li><li>JWT Auth</li><li>Vanilla JS</li><li>WhiteNoise</li>
                 </ul>
@@ -167,13 +161,14 @@
                   <span class="project-metric"><strong>95</strong> Lighthouse</span>
                   <span class="project-metric"><strong>95.8%</strong> functional tests</span>
                   <button class="text-link modal-trigger" type="button" aria-haspopup="dialog" aria-controls="case-study-modal">Read Case Study <span aria-hidden="true">→</span></button>
+                  <a class="text-link" href="https://gilland09.github.io/altruria/frontend/index.html" target="_blank" rel="noopener noreferrer" aria-label="Launch the Altruria storefront in a new tab">Launch Storefront <span aria-hidden="true">↗</span></a>
                 </div>
               </div>
             </article>
 
             <article class="project-card card" data-category="full-stack">
               <div class="project-visual visual-pulmo" aria-hidden="true">
-                <span class="visual-label">02 / Clinical decision support</span>
+                <span class="visual-label">Clinical decision support</span>
                 <div class="health-ui">
                   <span class="health-pulse">+</span>
                   <span class="health-line"></span>
@@ -183,24 +178,27 @@
               </div>
               <div class="project-content">
                 <p class="project-type">Health technology</p>
-                <h3>PulmoCare <span class="project-subtitle">— Clinical Decision Support System for Pre-Diagnosis of Pulmonary Infections &amp; Patient Appointment Scheduling</span></h3>
-                <p>A deterministic, knowledge-based Clinical Decision Support System built for Naval Doctors Healthcare Services Inc. It uses text normalization and a multilingual symptom phrase dictionary (English, Tagalog, Cebuano/Bisaya) with negation and typo/fuzzy matching, red-flag triage (<code>URGENT</code>, <code>UNRELATED</code>, <code>VALID</code>), guided follow-up questions, and a Decision Tree-Based Rule Engine with weighted scoring (<code>S = (R / M) × 100</code>; minimum match threshold: 50/100) across Influenza, Pneumonia, Acute Bronchitis, and Tuberculosis. Clinic appointments and teleconsultations are integrated into the workflow.</p>
-                <p>Evaluation: ISO/IEC 25010 pooled mean 3.94/5.00 (Maintainability 4.08); UTAUT2 pooled mean 4.13/5.00 across 80 respondents (Performance Expectancy 4.33).</p>
+                <h3>PulmoCare <span class="project-subtitle">— Clinical Decision Support &amp; Scheduling</span></h3>
+                <p>A deterministic, rule-based Clinical Decision Support System for Naval Doctors Healthcare Services Inc. that triages multilingual respiratory symptoms and scores four pulmonary infection profiles alongside integrated appointment scheduling.</p>
                 <ul class="tag-list" aria-label="PulmoCare technology stack">
                   <li>Next.js</li><li>React</li><li>TypeScript</li><li>Tailwind CSS</li><li>shadcn/ui</li><li>Appwrite</li><li>Rule-Based Decision Tree</li>
                 </ul>
-                <a class="button btn btn--primary project-launch" href="https://pulmocare-pi.vercel.app" target="_blank" rel="noopener noreferrer">Launch Live App <span aria-hidden="true">↗</span></a>
+                <div class="project-footer">
+                  <span class="project-metric"><strong>3.94/5</strong> ISO/IEC 25010</span>
+                  <span class="project-metric"><strong>4.13/5</strong> UTAUT2</span>
+                  <a class="text-link" href="https://pulmocare-pi.vercel.app" target="_blank" rel="noopener noreferrer">Launch Live App <span aria-hidden="true">↗</span></a>
+                </div>
               </div>
             </article>
 
             <article class="project-card card" data-category="ai">
               <div class="project-visual visual-papaya" aria-hidden="true">
-                <span class="visual-label">03 / Submitted research paper</span>
+                <span class="visual-label">Submitted research paper</span>
                 <div class="research-benchmark">
                   <div class="benchmark-heading"><span>COMPUTER VISION STUDY</span><strong>Benchmark</strong></div>
                   <div class="benchmark-metrics">
                     <span><strong>7,120</strong><small>Images</small></span>
-                    <span><strong>04</strong><small>Ripeness stages</small></span>
+                    <span><strong>4</strong><small>Ripeness stages</small></span>
                   </div>
                   <div class="benchmark-models"><span>YOLOv11s</span><b>VS</b><span>Faster R-CNN</span></div>
                   <div class="benchmark-correlation"><span aria-hidden="true">↗</span> Brix sugar correlation</div>
@@ -209,16 +207,20 @@
               <div class="project-content">
                 <p class="project-type"><span class="research-status">Submitted Research Paper</span></p>
                 <h3>Papaya Ripeness Classification Study</h3>
-                <p>A comparative deep-learning benchmark classifying papaya ripeness across four stages, correlated with Brix sugar content. Models trained and evaluated using a 7,120-image dataset.</p>
+                <p>An empirical computer vision study benchmarking YOLOv11s against Faster R-CNN across 7,120 images to classify four papaya ripeness stages correlated with Brix sugar levels.</p>
                 <ul class="tag-list" aria-label="Papaya study technology stack">
                   <li>Python</li><li>YOLOv11s</li><li>Faster R-CNN</li><li>Roboflow</li>
                 </ul>
+                <div class="project-footer">
+                  <span class="project-metric"><strong>7,120</strong> images · 4 stages</span>
+                  <span class="project-metric">Submitted research</span>
+                </div>
               </div>
             </article>
 
             <article class="project-card card" data-category="full-stack">
               <div class="project-visual visual-sports" aria-hidden="true">
-                <span class="visual-label">04 / Parallel computing</span>
+                <span class="visual-label">Parallel computing</span>
                 <div class="parallel-visual">
                   <span>REQUEST QUEUE</span>
                   <i></i><i></i><i></i><i></i>
@@ -229,16 +231,19 @@
               <div class="project-content">
                 <p class="project-type">Concurrency &amp; performance</p>
                 <h3>Sports Facility Reservation System</h3>
-                <p>A high-concurrency reservation engine using <code>ProcessPoolExecutor</code> for parallel availability evaluation, achieving a 2.86× speedup over serial execution.</p>
+                <p>A high-concurrency booking web app combining Django and a FastAPI multiprocessing service (<code>ProcessPoolExecutor</code>) to achieve a 2.86x speedup in availability checks.</p>
                 <ul class="tag-list" aria-label="Sports reservation system technology stack">
                   <li>Django</li><li>FastAPI</li><li>Python Multiprocessing</li>
                 </ul>
+                <div class="project-footer">
+                  <span class="project-metric"><strong>2.86x</strong> availability speedup</span>
+                </div>
               </div>
             </article>
 
             <article class="project-card card project-design" data-category="design">
               <div class="project-visual visual-ordinance" aria-hidden="true">
-                <span class="visual-label">05 / Civic technology</span>
+                <span class="visual-label">Civic technology</span>
                 <div class="ordinance-wireframe">
                   <div class="wireframe-topbar"><span>NAVAL MUNICIPAL HALL</span><span></span></div>
                   <div class="wireframe-layout">
@@ -256,13 +261,13 @@
               <div class="project-content">
                 <p class="project-type">Product design</p>
                 <h3>Municipal Ordinance Management System</h3>
-                <p>A high-fidelity interactive prototype and design system engineered for the Naval Municipal Hall, focused on making ordinance records easier to organize and navigate.</p>
+                <p>A high-fidelity interactive Figma UI/UX prototype and design system engineered to digitize ordinance tracking for the Naval Municipal Hall.</p>
                 <ul class="tag-list" aria-label="Municipal ordinance system design tools">
                   <li>Figma</li><li>UI/UX Wireframing</li><li>Interactive Prototyping</li>
                 </ul>
-                <div class="project-actions">
-                  <a class="button btn btn--primary project-launch" href="https://www.figma.com/proto/ULDDltdyR1fwOFg6Gm0YWk/Prototype?node-id=311-2120&amp;p=f&amp;t=q9bMlRXKbq2iMw2g-8&amp;scaling=contain&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;hide-ui=1&amp;fbclid=IwY2xjawVdL21leHRuA2FlbQIxMABwZG9mBWJyaWQRMTJtVEpKZURETDh5eWJ4RmJzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEf132b-NoMW9YenW4qgEpEDRhRKOVx3B2WKoaRT83eudWitD4iVdT86SQYpwc_aem_lIx8Om9xUZbvX_TreraVcw" target="_blank" rel="noopener noreferrer">Open Interactive Figma Prototype <span aria-hidden="true">↗</span></a>
-                  <button class="button btn btn--outline figma-preview-trigger" type="button" aria-haspopup="dialog" aria-controls="figma-preview-modal">Preview Prototype</button>
+                <div class="project-footer">
+                  <a class="text-link figma-launch-link" href="https://www.figma.com/proto/ULDDltdyR1fwOFg6Gm0YWk/Prototype?node-id=311-2120&amp;p=f&amp;t=q9bMlRXKbq2iMw2g-8&amp;scaling=contain&amp;content-scaling=fixed&amp;page-id=0%3A1&amp;hide-ui=1&amp;fbclid=IwY2xjawVdL21leHRuA2FlbQIxMABwZG9mBWJyaWQRMTJtVEpKZURETDh5eWJ4RmJzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEf132b-NoMW9YenW4qgEpEDRhRKOVx3B2WKoaRT83eudWitD4iVdT86SQYpwc_aem_lIx8Om9xUZbvX_TreraVcw" target="_blank" rel="noopener noreferrer">Open Figma Prototype <span aria-hidden="true">↗</span></a>
+                  <button class="text-link figma-preview-trigger" type="button" aria-haspopup="dialog" aria-controls="figma-preview-modal">Preview Prototype</button>
                 </div>
               </div>
             </article>
@@ -279,22 +284,18 @@
           </div>
           <div class="skills-grid">
             <article class="skill-group card">
-              <span class="skill-index">01</span>
               <h3>Languages &amp; Core Web</h3>
               <ul class="tag-list"><li>Python</li><li>JavaScript ES6+</li><li>TypeScript</li><li>Java</li><li>SQL</li><li>Semantic HTML5</li><li>CSS3</li></ul>
             </article>
             <article class="skill-group card">
-              <span class="skill-index">02</span>
               <h3>Frameworks &amp; Backend</h3>
               <ul class="tag-list"><li>Django</li><li>Django REST Framework</li><li>FastAPI</li><li>Next.js</li><li>React</li><li>Appwrite</li></ul>
             </article>
             <article class="skill-group card">
-              <span class="skill-index">03</span>
               <h3>AI, Data &amp; Parallel Computing</h3>
               <ul class="tag-list"><li>YOLOv11s</li><li>Faster R-CNN</li><li>Roboflow</li><li>Python Multiprocessing</li><li>R / KNN Modeling</li></ul>
             </article>
             <article class="skill-group card">
-              <span class="skill-index">04</span>
               <h3>Tools &amp; Standards</h3>
               <ul class="tag-list"><li>Git &amp; GitHub</li><li>VS Code</li><li>Figma</li><li>Postman</li><li>MySQL</li><li>WCAG 2.1 AA Accessibility</li><li>ISO/IEC 25010</li></ul>
             </article>
@@ -320,7 +321,7 @@
                     <p class="certificate-meta"><span>International program</span><span>March 2026</span></p>
                     <h3>International Faculty &amp; Student Immersion Program</h3>
                     <p class="cert-issuer">Software Development Center (SDC), Da Nang University, Vietnam</p>
-                    <p>Completed a two-week international software engineering and academic immersion program focused on global industry workflows and cross-cultural technical collaboration.</p>
+                    <p>Two-week immersion in software engineering, global industry workflows, and cross-cultural technical collaboration.</p>
                   </div>
                 </article>
                 <article class="cert-slide card" data-cert-index="1" role="group" aria-roledescription="slide" aria-label="2 of 3" aria-hidden="true" inert>
@@ -332,7 +333,7 @@
                     <p class="certificate-meta"><span>Micro-credential</span><span>September 15, 2026</span></p>
                     <h3>Introduction to AI Literacy and Responsible Use</h3>
                     <p class="cert-issuer">CHED, Bagong Pilipinas, ACHIEVE &amp; Mapúa University in collaboration with Arizona State University</p>
-                    <p>Five-hour PQF Level 6 micro-credential covering responsible AI frameworks, prompt engineering, and ethical deployment.</p>
+                    <p>Five-hour PQF Level 6 micro-credential in responsible AI frameworks, prompt engineering, and ethical deployment.</p>
                     <p class="credential-id"><strong>Credential ID:</strong> ZMX30ER70ALDL</p>
                   </div>
                 </article>
@@ -345,7 +346,7 @@
                     <p class="certificate-meta"><span>Digital literacy webinar</span><span>September 5, 2025</span></p>
                     <h3>Integrated OS – Be More Digi-TALINO Webinar</h3>
                     <p class="cert-issuer">Integrated Office Solutions, Inc. (Integrated OS)</p>
-                    <p>Training session focused on digital literacy, productivity workflows, smart research, and data safety and security.</p>
+                    <p>Training in digital literacy, productivity workflows, smart research, and data safety and security.</p>
                   </div>
                 </article>
               </div>
@@ -452,7 +453,7 @@
     <dialog class="case-study-modal" id="case-study-modal" aria-labelledby="case-study-title">
       <div class="modal-header">
         <div>
-          <p class="eyebrow">Case study / 01</p>
+          <p class="eyebrow">Altruria case study</p>
           <h2 id="case-study-title">Altruria: from farm to front door</h2>
         </div>
         <button class="icon-button modal-close" type="button" aria-label="Close case study">×</button>
